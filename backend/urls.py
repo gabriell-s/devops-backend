@@ -21,7 +21,7 @@ from drf_spectacular.views import (
     SpectacularRedocView,
     SpectacularSwaggerView,
 )
-from backend.books.router import router as books_router
+from backend.core.router import router as core_router
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -37,5 +37,5 @@ urlpatterns = [
         SpectacularRedocView.as_view(url_name="schema"),
         name="redoc",
     ),
-    path("", include(books_router.urls)),
+    path("core/", include(core_router.urls)),
 ]
